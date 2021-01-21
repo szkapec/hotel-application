@@ -1,0 +1,136 @@
+// .btn {
+//     background-color: white;
+//     padding: 20px;
+//     button {
+//         display: block;
+//         margin: 0px auto;
+//         background-color: #f9e8c7;
+//         padding: 5px 30px;
+//         height: 50px;
+//         text-transform: uppercase;
+//         letter-spacing: 1px;
+//         transition: .3s;
+//         a {
+//             text-decoration: none;
+//             color: black;
+//         }
+//         &:hover {
+//             background-color: #f4d599;
+//         }
+//     }
+
+.choince-menu {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+    background-color: #322e2b;
+    button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        background-color: #f9e8c7;
+        outline: black;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @media(min-width:500px){
+        padding: 25px 10px;
+        button {
+            font-size: 16px;
+        }
+    }
+    @media(min-width: 800px) {
+        button {
+            margin: 0 15px;
+        }
+    }
+}
+
+.menu {
+    .cart-image {
+        width: 100%;
+        height: 40%;
+        max-height: 600px;
+    }
+    .title {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        line-height: 30px;
+        margin: 30px 0 10px;
+        text-align: center;
+    }
+    .container {
+        border: 1px solid #e2e2e2;
+        max-width: 700px;
+        margin: 20px auto 40px;
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,.06),0 2px 5px 0 rgba(0,0,0,.2);
+        padding-bottom: 30px;
+        width: 90%;
+        h3 {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 30px;
+            margin: 20px 0 20px 30px;
+            border-bottom: 2px solid #f9e8c7;
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px 0 30px;
+            color: #666;
+            .line {
+
+                content: '';
+                background-color: red;
+                flex-grow: 1;
+                margin-top: 14px;
+                height: 1px;
+                margin-right: 9px;
+                background-color: #e2e2e2;
+                border-bottom: 1px solid #f9e8c7;
+            }
+            span:nth-child(1){
+            }
+            span:nth-child(2) {
+                color: #c7b290;
+            }
+        }
+    }
+ 
+}
+.contact {
+
+    div {
+        text-align: center;
+        font-size: 18px;
+        padding: 10px;
+        a {
+            color: #fdd27c;
+        }
+    }
+
+    .btn {
+        background-color: white;
+        padding: 20px;
+        button {
+            display: block;
+            margin: 0px auto;
+            background-color: #f9e8c7;
+            padding: 5px 30px;
+            height: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .3s;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            &:hover {
+                background-color: #f4d599;
+            }
+        }
+    }
+}

@@ -1,0 +1,221 @@
+// .landing-container {
+//     margin: 40px;
+//     width: 300px;
+//     height: 240px;
+//     background-color: grey;
+//     display:flex;
+//     flex-wrap: wrap;
+    
+//     a {
+//         text-decoration: none;
+//         width: 60px;
+//         height: 60px;
+//     }
+//     a:hover {
+//         text-decoration: underline;
+//     }
+    
+// }
+
+
+.room-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:#322e2b;
+    padding-bottom: 20px;
+    .container {
+        background-color: rgb(147, 147, 147);
+        margin: 30px 20px 0px;
+        box-shadow: 2px 5px 3px 0 rgba(0,0,0,.5);
+        position: relative;
+    }
+    img {
+        width: 300px;
+        transition: 0.5s;
+        height: 180px;
+        @media(min-width: 600px){
+            width: 400px;
+        }
+        @media(min-width: 1000px){
+            height: 220px;
+        }
+    }
+    
+    img:hover {
+        filter: brightness(0.8);
+    }
+
+    
+   
+    img:hover ~ .btn-link   {
+        z-index: 999;
+        background-color: red;
+    }
+    .box {
+        position: relative;
+        margin: 0 20px;
+        .price {
+            float: right;
+            color: white;
+            padding:5px;
+        }
+        .button-reserved {
+        color: white;
+        position: absolute;
+        top:0;
+        padding: 3px 8px;
+        background-color: #676767;
+        border: 1px solid #d6d6d6;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+        }
+        .capacity {
+            position: absolute;
+            bottom: 30px;
+            text-align: center;
+            background-color: rgba(119, 113, 113, 0.8);
+            padding: 5px;
+            color: white;
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.image {
+    background-image: url('https://cdn.pixabay.com/photo/2020/09/02/05/17/hotel-room-5537364_960_720.jpg');
+    position: relative;
+    min-height: 300px; /* You must set a specified height */
+    height: auto;
+    width: 100%;
+    background-position: right; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    @media(min-width:600px){
+        min-height: 400px;
+    }
+    @media(min-width:800px){
+        min-height: 500px;
+    }
+    @media(min-width:1200px){
+        min-height: 600px;
+    }
+    @media(min-width:1500px){
+        min-height: 700px;
+    }
+
+    .hotel {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 40px;
+        color: white;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-shadow: 1px 1px 1px rgba(0,8,15,.5);
+        @media(min-width: 600px){
+            bottom: 120px;
+        }
+    }
+    .hotel-desc {
+        display: none;
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 1px rgba(0,8,15,.5);
+        font-size: 20px;
+        @media(min-width: 600px) {
+            display: block;
+        }
+    }
+}
+.btn {
+    background-color: #322e2b;
+    padding: 20px;
+    button {
+        display: block;
+        margin: 0px auto;
+        background-color: #f9e8c7;
+        padding: 5px 30px;
+        height: 50px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: .3s;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        &:hover {
+            background-color: #f4d599;
+        }
+    }
+}
+.advantage {
+    background-color: #322e2b;
+    padding: 30px 0;
+    border-top: 1px solid #5b5855;
+    div > ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        font-size: 18px;
+        color: white;
+        line-height: 30px;
+        li {
+           list-style: none;
+           padding: 5px 10px;
+           i {
+               display: block;
+               text-align: center;
+               margin-bottom: 5px;
+               color: #f9e8c7;
+               font-size: 24px;
+           }
+        }
+    }
+}
+
+
+.description-rooms {
+    background-color: #322e2b;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 8, 15, 0.5);
+    padding: 20px 20px 20px;
+    section {
+        max-width: 800px;
+        margin: 0px auto;
+        text-align: center;
+    }
+    h2 {
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 45px;
+        letter-spacing: 3px;
+        font-size: 35px;
+        margin: 10px;
+      
+    }
+    div {
+        margin-top: 20px;
+        letter-spacing: 1px;
+        line-height: 30px;
+        font-weight: 600;
+        font-size: 20px;
+       
+    }
+    p {
+        margin-top: 20px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 25px;
+    }
+}

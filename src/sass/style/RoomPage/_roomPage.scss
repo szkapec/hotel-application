@@ -1,0 +1,237 @@
+
+.container-room {
+    background-color: #322e2b;
+    color: white;
+    margin-top: 40px;
+    .grid-room {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        @media(min-width: 1000px){
+            grid-template-columns: 500px 1fr;
+        }
+
+        .reserved {
+            background-color: #5b5855;
+            margin: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 150px;
+            align-items: center;
+            width: 300px;
+            margin: 10px  auto;
+            .btn {
+                display: block;
+                margin: 20px auto;
+                background-color: #f9e8c7;
+                padding: 5px 30px;
+                height: 50px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: black;
+                width: auto;
+                
+                &:hover {
+                    background-color: #f4d599;
+                }
+            }
+            form {
+                width: 80%;
+                margin: 5px 30px;
+                .container-form {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                    flex-wrap: wrap;
+                }
+            }
+            @media(min-width:500px) {
+                width:auto;
+                margin: 20px 40px;
+                max-width: 500px;
+                margin: 20px auto;
+            }
+            @media(min-width:1000px){
+                margin: 40px;
+                width: 420px;
+
+                form {
+                    width: 90%;
+                }
+            }
+            .generate-code {
+                display: block;
+                text-align: center;
+                border: 2px solid #f9e8c7;
+                padding: 10px 20px;
+                color: #f9e8c7;
+                font-size: 25px;
+                
+            }
+            .code-info {
+                text-align: center;
+                letter-spacing: 1px;
+                line-height: 20px;
+                margin-top: 15px;
+            }
+            .generate {
+                float: right;
+            }
+            .container-price {
+                display: flex;
+                width: 100%;
+                margin-top: 20px;
+                text-align: center;
+                letter-spacing: 1px;
+                padding-bottom: 20px;
+                .btn {
+                   cursor: pointer;
+                   margin: 20px auto;
+                   padding: 5px 5px;
+
+                }
+            }
+        }
+        .reserved-info {
+            background-color: #5b5855;
+            margin: 20px 40px;
+            line-height: 25px;
+            letter-spacing: 1px;
+            &__important {
+                display: block;
+                padding-top: 10px;
+                padding-left: 30px;
+                font-weight: 700;
+                font-size: 22px;
+            }
+            @media(min-width:500px) {
+                width:auto;
+                margin: 20px 40px;
+                max-width: 500px;
+                margin: 20px auto;
+            }
+            @media(min-width:1000px){
+                margin: 40px;
+                width: 420px;
+            }
+            ul {
+                list-style: none;
+                padding-bottom: 20px;
+                padding-left: 30px;
+                li{
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 10px 30px 10px 0;
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .politics {
+                display: block;
+                margin-left: 30px;
+                margin-right: 30px;
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            .politics-text {
+                display: block;
+                margin: 10px 40px;
+                font-size: 18px;
+                padding-bottom: 20px
+            }
+        }
+
+
+
+        .description-room {
+            margin: 20px 30px 20px 20px;
+            line-height: 30px;
+            h2 {
+                text-align: center;
+                padding-bottom: 5px;
+              
+            }
+            .info {
+                padding: 10px;
+                font-size: 22px;
+                font-weight: 700;
+            }
+            .capacity {
+                font-size: 18px;
+                margin: 20px 10px 0;
+                line-height: 25px;
+            }
+            .info-priv {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                font-size: 18px;
+                
+                li {
+                    margin: 10px 30px 10px 0;
+                    i {
+                        margin: 5px 10px;
+                    }
+                }
+            }
+            .amenities {
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                margin-left: 20px;
+                @media(min-width:800px) {
+                    grid-template-columns: repeat(2,1fr);
+                    justify-items: center;
+                    margin-left: 0px;
+                }
+                .extras, .additionally {
+                    .info {
+                        display: block;
+                        margin: 30px 0 10px;
+                        
+                    }
+                    li {
+                        line-height: 35px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .room-image {
+        margin: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: center;
+        max-width: 1600px;
+        margin: 20px auto;
+        padding-bottom: 30px;
+        img {
+            margin-top: 30px;
+            width: 90%;
+        }
+        
+        @media(min-width: 1000px){
+            img {
+                width: 30%;
+            }
+            img:nth-child(1) {
+                padding-top: 30px;
+            }
+            img:nth-child(3) {
+                padding-top: 30px;
+            }
+        }
+    }
+
+    .main-photo {
+        width: 100%;
+        height: auto;
+        max-height: 700px;
+        
+    }
+}

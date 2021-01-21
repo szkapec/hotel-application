@@ -1,0 +1,83 @@
+
+
+.swiper {
+    position: relative;
+
+    .image_room {
+        width: 100%;
+        height: 350px;
+        transition: .5s;
+    }
+    
+    .image_room:hover {
+        filter: brightness(70%);
+    }
+    h3 {
+        padding: 30px;
+        font-size: 38px;
+        letter-spacing: 1px;
+        border-top: 1px solid #5b5855;
+        color: white;
+        text-align: center;
+        background-color:#322e2b;
+    }
+
+    .swiper_container {
+        padding: 10px;
+        background-color:#322e2b;
+        @media(min-width:600px){
+            padding: 30px;
+        }
+    }
+    .swiper-slide {
+        background-color: #fff;
+    }
+
+    .description-room {
+        color: black;
+
+        .title {
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #d8d8d8;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        .box_info {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            span {
+                padding: 15px 10px;
+                @media(min-width: 600px) {
+                    padding: 15px 30px;
+                }
+                i {
+                    color: #5b5855;
+                    margin-right: 5px;
+                }
+            }
+       
+        }
+    }
+    .btn {
+        padding-bottom: 50px;
+        background-color: #322e2b;
+        button {
+            display: block;
+            margin: 30px auto 0;
+        
+            background-color: #f9e8c7;
+            padding: 5px 30px;
+            height: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .4s;
+            &:hover {
+                background-color: #f4d599;
+            }
+        }
+    }
+   
+}

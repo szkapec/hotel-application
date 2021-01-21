@@ -1,0 +1,244 @@
+.room-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #322e2b;
+  padding-bottom: 20px;
+}
+
+.room-container .container {
+  background-color: #939393;
+  margin: 30px 20px 0px;
+  box-shadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.room-container img {
+  width: 300px;
+  transition: 0.5s;
+  height: 180px;
+}
+
+@media (min-width: 600px) {
+  .room-container img {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .room-container img {
+    height: 220px;
+  }
+}
+
+.room-container img:hover {
+  filter: brightness(0.8);
+}
+
+.room-container img:hover ~ .btn-link {
+  z-index: 999;
+  background-color: red;
+}
+
+.room-container .box {
+  position: relative;
+  margin: 0 20px;
+}
+
+.room-container .box .price {
+  float: right;
+  color: white;
+  padding: 5px;
+}
+
+.room-container .box .button-reserved {
+  color: white;
+  position: absolute;
+  top: 0;
+  padding: 3px 8px;
+  background-color: #676767;
+  border: 1px solid #d6d6d6;
+  cursor: pointer;
+}
+
+.room-container .box .button-reserved:hover {
+  text-decoration: underline;
+}
+
+.room-container .box .capacity {
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  background-color: rgba(119, 113, 113, 0.8);
+  padding: 5px;
+  color: white;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.image {
+  background-image: url("https://cdn.pixabay.com/photo/2020/09/02/05/17/hotel-room-5537364_960_720.jpg");
+  position: relative;
+  min-height: 300px;
+  /* You must set a specified height */
+  height: auto;
+  width: 100%;
+  background-position: right;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+}
+
+@media (min-width: 600px) {
+  .image {
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 800px) {
+  .image {
+    min-height: 500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    min-height: 600px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .image {
+    min-height: 700px;
+  }
+}
+
+.image .hotel {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 1px rgba(0, 8, 15, 0.5);
+}
+
+@media (min-width: 600px) {
+  .image .hotel {
+    bottom: 120px;
+  }
+}
+
+.image .hotel-desc {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 1px rgba(0, 8, 15, 0.5);
+  font-size: 20px;
+}
+
+@media (min-width: 600px) {
+  .image .hotel-desc {
+    display: block;
+  }
+}
+
+.btn {
+  background-color: #322e2b;
+  padding: 20px;
+}
+
+.btn button {
+  display: block;
+  margin: 0px auto;
+  background-color: #f9e8c7;
+  padding: 5px 30px;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.btn button a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn button:hover {
+  background-color: #f4d599;
+}
+
+.advantage {
+  background-color: #322e2b;
+  padding: 30px 0;
+  border-top: 1px solid #5b5855;
+}
+
+.advantage div > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-size: 18px;
+  color: white;
+  line-height: 30px;
+}
+
+.advantage div > ul li {
+  list-style: none;
+  padding: 5px 10px;
+}
+
+.advantage div > ul li i {
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #f9e8c7;
+  font-size: 24px;
+}
+
+.description-rooms {
+  background-color: #322e2b;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 8, 15, 0.5);
+  padding: 20px 20px 20px;
+}
+
+.description-rooms section {
+  max-width: 800px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.description-rooms h2 {
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 45px;
+  letter-spacing: 3px;
+  font-size: 35px;
+  margin: 10px;
+}
+
+.description-rooms div {
+  margin-top: 20px;
+  letter-spacing: 1px;
+  line-height: 30px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.description-rooms p {
+  margin-top: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 25px;
+}

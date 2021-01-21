@@ -1,0 +1,150 @@
+
+.footer-container {
+    background-color: #262628;
+}
+.site-footer {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    @media(min-width: 1000px) {
+        grid-template-columns: repeat(3,1fr);
+    }
+    background-color: #262628;
+    letter-spacing: 1px;
+    line-height: 35px;
+    .contact {
+        padding: 10px;
+        text-align: center;
+        
+        .test {
+            font-size: 18px;
+            color: #f9e8c7;
+        }
+        i {
+            color: #f9e8c7;
+        }
+        .github {
+            padding-bottom: 10px;
+          
+            a {
+                text-decoration: none;
+                color: white;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            i {
+                font-size: 20px;
+                color: #f9e8c7;
+            }
+        }
+        .icon {
+            i {
+                color: white;
+            }
+            :nth-child(1){ &:hover {
+                    color: #4c6cb1;
+                    border: 1px solid #4c6cb1;
+                }}
+            :nth-child(2) { &:hover {
+                color: rgb(251, 30, 30);
+                border: 1px solid rgb(251, 30, 30);
+            }}
+            :nth-child(3) { &:hover {
+                color: #d64374;
+                border: 1px solid #d64374;
+            }}
+            :nth-child(4) { &:hover {
+                color: #1d967a;
+                border: 1px solid #1d967a;
+            }}
+            :nth-child(5) { &:hover {
+                color: #911422;
+                border: 1px solid #911422;
+            }}
+            i {
+                margin-left: 20px;
+                font-size: 20px;
+                border: 1px solid white;
+                padding: 10px;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                transition: .2s;
+            }
+        }
+        .rights-reserved {
+            font-size: 14px;
+            margin-top: 5px;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 1px rgba(0, 8, 15, 0.5);
+            display: none;
+            @media(min-width:1000px) {
+                display: block;
+            }
+        }
+        
+    }
+    .rights-reserved-response {
+        font-size: 14px;
+        margin-top: 25px;
+        letter-spacing: 3px;
+        text-shadow: 1px 1px 1px rgba(0, 8, 15, 0.5);
+        display: block;
+        text-align: center;
+        @media(min-width:1000px) {
+            display: none;
+        
+        }
+    }
+
+    .address {
+        margin-top: 10px;
+        div {
+            text-align: center;
+            i {
+                font-size: 22px;
+                color: #f9e8c7;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            span {
+                color: #f9e8c7;
+            }
+        }
+    }
+    .navigate {
+        button {
+            display: block;
+            margin: 30px auto 0;
+            background-color: #262628;
+            padding: 5px 30px;
+            height: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .4s;
+            color: white;
+            &:hover {
+                background-color: #f4d599;
+                a, i {
+                    color: black;
+                }
+
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            
+        }
+    }
+  
+}

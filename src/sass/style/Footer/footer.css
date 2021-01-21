@@ -1,0 +1,173 @@
+.footer-container {
+  background-color: #262628;
+}
+
+.site-footer {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #262628;
+  letter-spacing: 1px;
+  line-height: 35px;
+}
+
+@media (min-width: 1000px) {
+  .site-footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.site-footer .contact {
+  padding: 10px;
+  text-align: center;
+}
+
+.site-footer .contact .test {
+  font-size: 18px;
+  color: #f9e8c7;
+}
+
+.site-footer .contact i {
+  color: #f9e8c7;
+}
+
+.site-footer .contact .github {
+  padding-bottom: 10px;
+}
+
+.site-footer .contact .github a {
+  text-decoration: none;
+  color: white;
+}
+
+.site-footer .contact .github a:hover {
+  text-decoration: underline;
+}
+
+.site-footer .contact .github i {
+  font-size: 20px;
+  color: #f9e8c7;
+}
+
+.site-footer .contact .icon i {
+  color: white;
+}
+
+.site-footer .contact .icon :nth-child(1):hover {
+  color: #4c6cb1;
+  border: 1px solid #4c6cb1;
+}
+
+.site-footer .contact .icon :nth-child(2):hover {
+  color: #fb1e1e;
+  border: 1px solid #fb1e1e;
+}
+
+.site-footer .contact .icon :nth-child(3):hover {
+  color: #d64374;
+  border: 1px solid #d64374;
+}
+
+.site-footer .contact .icon :nth-child(4):hover {
+  color: #1d967a;
+  border: 1px solid #1d967a;
+}
+
+.site-footer .contact .icon :nth-child(5):hover {
+  color: #911422;
+  border: 1px solid #911422;
+}
+
+.site-footer .contact .icon i {
+  margin-left: 20px;
+  font-size: 20px;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  transition: .2s;
+}
+
+.site-footer .contact .rights-reserved {
+  font-size: 14px;
+  margin-top: 5px;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 1px rgba(0, 8, 15, 0.5);
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .site-footer .contact .rights-reserved {
+    display: block;
+  }
+}
+
+.site-footer .rights-reserved-response {
+  font-size: 14px;
+  margin-top: 25px;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 1px rgba(0, 8, 15, 0.5);
+  display: block;
+  text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .site-footer .rights-reserved-response {
+    display: none;
+  }
+}
+
+.site-footer .address {
+  margin-top: 10px;
+}
+
+.site-footer .address div {
+  text-align: center;
+}
+
+.site-footer .address div i {
+  font-size: 22px;
+  color: #f9e8c7;
+}
+
+.site-footer .address div a {
+  text-decoration: none;
+  color: white;
+}
+
+.site-footer .address div a:hover {
+  text-decoration: underline;
+}
+
+.site-footer .address div span {
+  color: #f9e8c7;
+}
+
+.site-footer .navigate button {
+  display: block;
+  margin: 30px auto 0;
+  background-color: #262628;
+  padding: 5px 30px;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: .4s;
+  color: white;
+}
+
+.site-footer .navigate button:hover {
+  background-color: #f4d599;
+}
+
+.site-footer .navigate button:hover a, .site-footer .navigate button:hover i {
+  color: black;
+}
+
+.site-footer .navigate button a {
+  text-decoration: none;
+  color: white;
+}
