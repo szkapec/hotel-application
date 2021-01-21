@@ -2,8 +2,7 @@ import axios from 'axios';
 import {ADD_USER, GET_USER, GET_ALL_USER_FROM_ROOM, ALL_USER, ONE_ROOM_USERS, REMOVE_RESERVED, RESERVED_FAIL, ONE_ROOM_FAIL, CHANGE_PAID, ROOM_FORM_FAIL} from '../constants/user.constants';
 
 // const API = "http://localhost:4001"
-const API = "http://192.168.100.107:4000"
-
+const API = 'https://backend-post.herokuapp.com'
 
 export const addUser = (name, lastName, email, phone, setData, idRoom, price, capacity, night, startDate, code) => async (dispatch) => {
     try {

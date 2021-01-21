@@ -2,8 +2,9 @@ import axios from 'axios';
 import {ROOM_IS_LOADED, ONE_ROOM, RESERVED_ROOM, EMAIL_SEND, RESERVED_FAIL, ONE_ROOM_FAIL, ROOM_FORM_FAIL } from '../constants/room.constants'
 
 
-// const API = "http://localhost:4001"
-const API = "http://192.168.100.107:4000"
+
+// const API = 'http://192.168.100.107:4000'
+const API = 'https://backend-post.herokuapp.com'
 
 export const AllRoom = () => async (dispatch) => {
 
