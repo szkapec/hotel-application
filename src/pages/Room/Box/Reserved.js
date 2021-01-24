@@ -57,12 +57,10 @@ const Reserved = ({ reserveRoom, oneRoom, sendEmail, match, room, addUser, user,
         if (value.name.length < 3 || value.lastName.length < 3 || value.email.length < 4 || value.phone.length < 8 || startDate.length === 0) return false;
         if (value.name.length > 3 && value.lastName.length > 3 && value.email.length > 4 && value.phone.length > 8 && startDate.length !== 0) return true;
     }
-    console.log(startDate.length)
     const submitRoomReserved = (e) => {
         e.preventDefault();
         let code = Math.floor(Math.random() * 10000);
         let valid = validation()
-        console.log(valid)
         try {
             if (valid) {
                 addUser(value.name, value.lastName, value.email, value.phone, value.data, match.params.room_id, room.price, room.capacity, value.night, startDate, code)
@@ -140,7 +138,6 @@ const Reserved = ({ reserveRoom, oneRoom, sendEmail, match, room, addUser, user,
                                 />
                             </ThemeProvider>
                         </div>
-                        {console.log(user.idRoom.length >= 1 && user.idRoom[0].code)}
                         {submitInput && <>
                             <Code setCodeInfo={setCodeInfo} codeInfo={codeInfo} generateCode={generateCode} code={user.idRoom.length >= 1 ? user.idRoom[0].code : 0} match={match} />
                             <Price night={startDate.length} room={room} />

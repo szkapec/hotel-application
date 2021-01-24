@@ -96,7 +96,6 @@ export const RemoveReservedUser = (id, idRoom) => async(dispatch) => {
 
 export const ChangePaid = (id, idRoom) => async(dispatch) => {
     try {
-        console.log(id, idRoom)
         const response = await axios.put(`${API}/api/hotel/user/paid/${id}`)
         dispatch({
             type: CHANGE_PAID,
@@ -111,7 +110,6 @@ export const ChangePaid = (id, idRoom) => async(dispatch) => {
 }
 export const ChangeUnpaid = (id, idRoom) => async(dispatch) => {
     try {
-        console.log(id, idRoom)
         const response = await axios.put(`${API}/api/hotel/user/no_paid/${id}`)
         dispatch({
             type: CHANGE_PAID,

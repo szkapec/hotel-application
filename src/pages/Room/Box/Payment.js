@@ -8,9 +8,6 @@ const Payment = ({ room, night }) => {
     if (window.Stripe) setStripe(window.Stripe(stripeToken));
   }, [stripeToken]);
 
-  {console.log(room)}
-  {console.log(night)}
-  
   function checkout() {
     stripe.redirectToCheckout({
       lineItems: [{ price: room.stripe, quantity: night }],

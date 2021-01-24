@@ -71,6 +71,6 @@ export const sendEmail = (email, code, data) => async (dispatch) => {
             payload: response.data
         })
     } catch (error) {
-        console.log('errory ')
+        console.log('error', error)
     }
 }
