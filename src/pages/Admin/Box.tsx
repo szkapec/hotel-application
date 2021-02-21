@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { OneRoomUsers } from '../../actions/user.actions';
 
 const Box = ({ room, endOfBooking, OneRoomUsers }) => {
-    const valueColor = (id) => {
+
+    const valueColor = (id: any) => {
         let values = endOfBooking.filter(item => item === id)
         if (values.length !== 0) {
             return true;
@@ -37,7 +38,12 @@ const Box = ({ room, endOfBooking, OneRoomUsers }) => {
 
 export default connect(null, { OneRoomUsers })(Box)
 
-const StyledButton = styled.button`
+
+interface BaseButtonProps {
+    reserved: any
+  }
+
+const StyledButton = styled.button<BaseButtonProps>`
         border: 1px solid black;
         width: 60px;
         height: 60px;

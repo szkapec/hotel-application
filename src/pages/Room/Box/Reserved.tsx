@@ -139,7 +139,8 @@ const Reserved = ({ reserveRoom, oneRoom, sendEmail, match, room, addUser, user,
                             </ThemeProvider>
                         </div>
                         {submitInput && <>
-                            <Code setCodeInfo={setCodeInfo} codeInfo={codeInfo} generateCode={generateCode} code={user.idRoom.length >= 1 ? user.idRoom[0].code : 0} match={match} />
+                            <Code setCodeInfo={setCodeInfo} codeInfo={codeInfo} generateCode={generateCode} code={user.idRoom.length >= 1 
+                                ? user.idRoom[0].code : 0} />
                             <Price night={startDate.length} room={room} />
                         </>}
                         {!submitInput && <button className="btn" type="submit">Wyślij</button>}
@@ -173,7 +174,9 @@ const mapStateToProps = state => ({
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Reserved);
 
-
+interface BaseButtonProps {
+    item: any
+  }
 
 const StyledError = styled.div`
     color: #ff1b1b;
@@ -181,6 +184,6 @@ const StyledError = styled.div`
     text-align: right;
 `
 
-const InputError = styled.input`
+const InputError = styled.input<BaseButtonProps>`
     border: ${({ item }) => item && '2px solid #ff1b1b'}
 `

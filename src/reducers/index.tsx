@@ -5,5 +5,4 @@ import user from './user.reducer';
 export default combineReducers({
     room,
     user
-
 });

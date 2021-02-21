@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Payment from './Payment'
+import Payment from './Payment.js'
 
 const Price = ({ room, night }) => {
     const [card, setCard] = useState(true)

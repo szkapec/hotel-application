@@ -7,14 +7,14 @@ import Starters from './Menu/Starters';
 import { Link } from 'react-router-dom';
 const Restaurant = () => {
 
-    const [choince, setChoince] = useState("first-course")
+    const [choice, setChoice] = useState("first-course")
     let handleClick = (e) => {
-        setChoince(e.target.dataset.type)
+        setChoice(e.target.dataset.type)
     }
 
-    let filter = () => {
+    let filterDish: any = () => {
 
-        switch (choince) {
+        switch (choice) {
             case 'first-course': return <FirstCourse />
             case 'main-course': return <MainCourse />
             case 'starters': return <Starters />
@@ -32,7 +32,7 @@ const Restaurant = () => {
             </section>
             <section>
             <section>
-                {filter(choince)}
+                {filterDish(choice)}
             </section>
                
                 <div className="contact">

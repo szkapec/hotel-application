@@ -7,7 +7,7 @@ import { AllRoom } from './actions/room.actions';
 import { allUser } from './actions/user.actions';
 import RoomWrapper from './pages/Room/RoomWrapper';
 import RoomPage from './pages/RoomPage';
-import './sass/style.css';
+
 import Navbar from './components/Navbar/Navbar';
 import Canceled from './pages/Room/Promis/Canceled';
 import Success from './pages/Room/Promis/Success';
@@ -16,11 +16,13 @@ import Bar from './pages/Bar/Bar';
 import Rooms from './pages/Rooms/Rooms';
 import Footer from './pages/Footer/Footer';
 import Restaurant from './pages/Restaurant/Restaurant'
+import './sass/style.scss';
+
 const App = () => {
 
   useEffect(() => {
-    store.dispatch(AllRoom())
-    store.dispatch(allUser())
+    store.dispatch<any>(AllRoom())
+    store.dispatch<any>(allUser())
   }, []);
 
 
@@ -47,4 +49,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

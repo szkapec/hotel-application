@@ -7,15 +7,15 @@ import { Link } from 'react-router-dom';
 
 const Bar = () => {
 
-    const [choince, setChoince] = useState("wine")
+    const [choice, setChoice] = useState("wine")
 
     let handleClick = (e) => {
-        setChoince(e.target.dataset.type)
+        setChoice(e.target.dataset.type)
     }
 
-    let filter = () => {
+    let filterDish:any = () => {
 
-        switch (choince) {
+        switch (choice) {
             case 'wine': return <Wine />;
             case 'beer': return <Beer />;
             case 'whisky': return <Whisky />;
@@ -30,7 +30,7 @@ const Bar = () => {
                 <button data-type="whisky" onClick={handleClick}> Karta Whisky</button>
             </section>
             <section>
-                {filter(choince)}
+                {filterDish(choice)}
             </section>
             <div className="contact">
                 <div>Jeśli chcesz zamówić do pokoju zadzwoń <a href="tel:+ 661360889">recepcja</a></div>

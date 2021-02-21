@@ -1,12 +1,12 @@
 import axios from 'axios';
 import {ROOM_IS_LOADED, ONE_ROOM, RESERVED_ROOM, EMAIL_SEND, RESERVED_FAIL, ONE_ROOM_FAIL, ROOM_FORM_FAIL } from '../constants/room.constants'
+import { Dispatch } from 'redux';
 
 
+const API = 'http://192.168.100.115:4000'
+// const API = 'https://backend-post.herokuapp.com'
 
-// const API = 'http://192.168.100.107:4000'
-const API = 'https://backend-post.herokuapp.com'
-
-export const AllRoom = () => async (dispatch) => {
+export const AllRoom = () => async (dispatch: Dispatch) => {
 
     try {
         const response = await axios.get(`${API}/api/hotel/room/room`)
@@ -21,7 +21,7 @@ export const AllRoom = () => async (dispatch) => {
     }
 }
 
-export const oneRoom = (room_id) => async (dispatch) => {
+export const oneRoom = (room_id: string) => async (dispatch: Dispatch) => {
 
     try {
         const response = await axios.get(`${API}/api/hotel/room/room/${room_id}`)
@@ -36,7 +36,7 @@ export const oneRoom = (room_id) => async (dispatch) => {
     }
 }
 
-export const reserveRoom = (name, lastName, email, phone, setData, room_id) => async (dispatch) => {
+export const reserveRoom = (name: string, lastName: string, email: string, phone: number, setData: any , room_id: string) => async (dispatch: Dispatch) => {
     try {
         const config = {
             headers: {
@@ -57,7 +57,7 @@ export const reserveRoom = (name, lastName, email, phone, setData, room_id) => a
     }
 }
 
-export const sendEmail = (email, code, data) => async (dispatch) => {
+export const sendEmail = (email: string, code: number, data: any) => async (dispatch: Dispatch) => {
     try {
         const config = {
             headers: {

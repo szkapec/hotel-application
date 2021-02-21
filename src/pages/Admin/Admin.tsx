@@ -7,22 +7,28 @@ import AllUsers from './AllUsers';
 import Suite from './Suite';
 import ArchiveRooms from './ArchiveRooms';
 
-const Admin = ({ room, user, allUser }) => {
+type CartProps = {
+    room: any,
+    user: any,
+    allUser: any,
+}
+
+const Admin = ({ room, user, allUser }: CartProps) => {
 
     let [endOfBooking, setEndOfBooking] = useState([]);
-    let [today, setToDay] = useState();
+    let [today, setToDay] = useState<any>();
 
     useEffect(() => {
         setEndOfBooking([])
         allUser();
-        let today = formatDate(new Date())
-        setToDay(today)
+        let todays = formatDate(new Date())
+        setToDay(todays)
         user.allUsers.length !== 0 && user.allUsers.map(item => item.startDate.map(day => {
             day === today && setEndOfBooking(prevState => [...prevState, item.idRoom])
         }))
     }, [user.isloadingAllUsers])
 
-    const formatDate = (date) => {
+    const formatDate = (date:any) => {
         var today = new Date(date),
             month = '' + (today.getMonth() + 1),
             day = '' + today.getDate(),

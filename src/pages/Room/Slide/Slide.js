@@ -11,6 +11,7 @@ const Slide = ({ room, title }) => {
         slidesPerView: 1,
         
         pagination: {
+            el: '.swiper-pagination',
             type: 'bullets',
             clickable: true,
         },
@@ -32,12 +33,6 @@ const Slide = ({ room, title }) => {
                 spaceBetweenSlides: 40
             },
         },
-        
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true
-          },
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
@@ -49,7 +44,7 @@ const Slide = ({ room, title }) => {
         <div className="swiper">
             <h3>{title}</h3>
             <div className="swiper_container">
-                <Swiper  {...params}>
+                <Swiper {...params}>
                     {room&&room.map(item => {
                         return <div key={item._id} className="description-room">
                             <Link target="_blank" to={`/room/${item._id}`}><img className="image_room" src={item.images[0].image} alt="room image"/></Link>

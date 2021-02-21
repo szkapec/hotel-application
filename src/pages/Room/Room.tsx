@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { oneRoom, reserveRoom } from '../../actions/room.actions';
 import Reserved from './Box/Reserved';
 import DescriptionRoom from './Box/DescriptionRoom';
-import Slide from './Slide/Slide';
+import Slide from './Slide/Slide.js';
 const Room = ({ room, match }) => {
 
     useEffect(() => {

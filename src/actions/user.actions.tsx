@@ -1,10 +1,13 @@
 import axios from 'axios';
 import {ADD_USER, GET_USER, GET_ALL_USER_FROM_ROOM, ALL_USER, ONE_ROOM_USERS, REMOVE_RESERVED, RESERVED_FAIL, ONE_ROOM_FAIL, CHANGE_PAID, ROOM_FORM_FAIL} from '../constants/user.constants';
+import { Dispatch } from 'redux';
 
 // const API = "http://localhost:4001"
-const API = 'https://backend-post.herokuapp.com'
+const API = 'http://192.168.100.115:4000'
+// const API = 'https://backend-post.herokuapp.com'
 
-export const addUser = (name, lastName, email, phone, setData, idRoom, price, capacity, night, startDate, code) => async (dispatch) => {
+export const addUser = (name: string, lastName: string, email: string, phone: number, setData: any,
+     idRoom: string, price: number, capacity: number, night:number, startDate:any, code:number) => async (dispatch: Dispatch) => {
     try {
         const config = {
             headers: {
@@ -25,7 +28,7 @@ export const addUser = (name, lastName, email, phone, setData, idRoom, price, ca
         })
     }
 }
-export const showUser = (email) => async (dispatch) => {
+export const showUser = (email: string) => async (dispatch: Dispatch) => {
     try {
         const response = await axios.get(`${API}/api/hotel/user/user/${email}`)
         dispatch({
@@ -40,7 +43,7 @@ export const showUser = (email) => async (dispatch) => {
   }
 
 
-export const showAllUserFromRoom = (id_room) => async(dispatch) => {
+export const showAllUserFromRoom = (id_room: string) => async(dispatch: Dispatch) => {
     try {
         const response = await axios.get(`${API}/api/hotel/user/room/${id_room}`)
         dispatch({
@@ -53,7 +56,7 @@ export const showAllUserFromRoom = (id_room) => async(dispatch) => {
         })
     }
 }
-export const allUser = () => async(dispatch) => {
+export const allUser = () => async(dispatch: Dispatch) => {
     try {
         const response = await axios.get(`${API}/api/hotel/user/all_room`)
         dispatch({
@@ -66,7 +69,7 @@ export const allUser = () => async(dispatch) => {
         })
     }
 }
-export const OneRoomUsers = (id_room) => async(dispatch) => {
+export const OneRoomUsers = (id_room: string) => async(dispatch: Dispatch) => {
     try {
         const response = await axios.get(`${API}/api/hotel/user/show_one_room/${id_room}`)
         dispatch({
@@ -79,14 +82,14 @@ export const OneRoomUsers = (id_room) => async(dispatch) => {
         })
     }
 }
-export const RemoveReservedUser = (id, idRoom) => async(dispatch) => {
+export const RemoveReservedUser = (id: string, idRoom: string) => async(dispatch: Dispatch) => {
     try {
         const response = await axios.delete(`${API}/api/hotel/user/remove_reserved_user/${id}`)
         dispatch({
             type: REMOVE_RESERVED,
             payload: response.data
         })
-        dispatch(OneRoomUsers(idRoom))
+        dispatch<any>(OneRoomUsers(idRoom))
     } catch (error) {
         dispatch({
             type: ROOM_FORM_FAIL,
@@ -94,28 +97,28 @@ export const RemoveReservedUser = (id, idRoom) => async(dispatch) => {
     }
 }
 
-export const ChangePaid = (id, idRoom) => async(dispatch) => {
+export const ChangePaid = (id: string, idRoom: string) => async(dispatch: Dispatch) => {
     try {
         const response = await axios.put(`${API}/api/hotel/user/paid/${id}`)
         dispatch({
             type: CHANGE_PAID,
             payload: response.data
         })
-        dispatch(OneRoomUsers(idRoom))
+        dispatch<any>(OneRoomUsers(idRoom))
     } catch (error) {
         dispatch({
             type: ROOM_FORM_FAIL,
         })
     }
 }
-export const ChangeUnpaid = (id, idRoom) => async(dispatch) => {
+export const ChangeUnpaid = (id: string, idRoom: string) => async(dispatch: Dispatch) => {
     try {
         const response = await axios.put(`${API}/api/hotel/user/no_paid/${id}`)
         dispatch({
             type: CHANGE_PAID,
             payload: response.data
         })
-        dispatch(OneRoomUsers(idRoom))
+        dispatch<any>(OneRoomUsers(idRoom))
     } catch (error) {
         dispatch({
             type: ROOM_FORM_FAIL,
