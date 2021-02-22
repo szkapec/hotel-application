@@ -10,9 +10,24 @@ import { DatePicker, theme } from 'react-trip-date';
 import { ThemeProvider } from 'styled-components';
 import '../../../sass/style/RoomPage/_roomPage.css';
 import styled from 'styled-components';
+import { Dispatch } from 'redux';
+import {RoomType, RoomMatchType, RoomUserType} from '../TypeRoom';
 
 
-const Reserved = ({ reserveRoom, oneRoom, sendEmail, match, room, addUser, user, showUser }) => {
+type Reservedtype = {
+    match: RoomMatchType,
+    room: RoomType,
+    oneRoom: Function,
+    sendEmail: Function,
+    addUser: Function,
+    showUser: Function,
+    user: RoomUserType,
+}
+
+const Reserved = ({ oneRoom, sendEmail, match, room, addUser, user, showUser }: Reservedtype) => {
+
+    console.log(user)
+
     const [startDate, setStartDate] = useState([]);
     let [active, setActive] = useState(false)
     let [codeInfo, setCodeInfo] = useState(true)
@@ -51,11 +66,24 @@ const Reserved = ({ reserveRoom, oneRoom, sendEmail, match, room, addUser, user,
         setErrorDate(false)
         if (startDate.length === 0) setErrorDate(true);
         if (value.name.length <= 3) setErrorName(true);
+        if (value.name.length >= 20) setErrorName(true);
+        
+
         if (value.lastName.length <= 3) setErrorLastName(true);
+        if (value.lastName.length >= 20) setErrorLastName(true);
+
         if (value.email.length <= 4) setErrorEmail(true);
+        if (value.email.length >=20) setErrorEmail(true);
+
         if (value.phone.length <= 8) setErrorPhone(true);
-        if (value.name.length < 3 || value.lastName.length < 3 || value.email.length < 4 || value.phone.length < 8 || startDate.length === 0) return false;
-        if (value.name.length > 3 && value.lastName.length > 3 && value.email.length > 4 && value.phone.length > 8 && startDate.length !== 0) return true;
+        if (value.phone.length > 12) setErrorPhone(true);
+
+        if (value.name.length < 3 || value.name.length >= 20 || value.lastName.length < 3 || value.lastName.length >=20 || value.email.length < 4 || value.email.length >= 20 || value.phone.length < 8 || value.phone.length > 12  || startDate.length === 0) return false;
+
+        if (value.name.length > 3 && value.name.length < 20 
+            && value.lastName.length > 3 && value.lastName.length <20 
+            && value.email.length > 4 && value.email.length < 20  
+            && value.phone.length > 8 && value.phone.length <= 12 && startDate.length !== 0) return true;
     }
     const submitRoomReserved = (e) => {
         e.preventDefault();
@@ -107,25 +135,25 @@ const Reserved = ({ reserveRoom, oneRoom, sendEmail, match, room, addUser, user,
                     <form onSubmit={(e) => submitRoomReserved(e)}>
                         <div className="container-form">
                             <label htmlFor="name">Imię:</label>
-                            <InputError placeholder="imię" item={errorName} type="text" id="name" name="name" onChange={(e) => onChangeInput(e)} />
+                            <InputError placeholder="imię" item={errorName} type="text" id="name" name="name" maxLength={19}  onChange={(e) => onChangeInput(e)} />
                         </div>
                         {errorName && <StyledError>Popraw imię</StyledError>}
                         <div className="container-form">
                             <label htmlFor="lastName">Nazwisko:</label>
-                            <InputError placeholder="nazwisko" item={errorLastName} type="text" id="lastName" name="lastName" onChange={(e) => onChangeInput(e)} />
+                            <InputError placeholder="nazwisko" item={errorLastName}  maxLength={19}  type="text" id="lastName" name="lastName" onChange={(e) => onChangeInput(e)} />
                         </div>
                         {errorLastName && <StyledError>Wprowadz nazwisko</StyledError>}
                         <div className="container-form">
                             <label htmlFor="email">Email</label>
-                            <InputError placeholder="email" item={errorEmail} type="email" id="email" name="email" onChange={(e) => onChangeInput(e)} />
+                            <InputError placeholder="email" item={errorEmail}  maxLength={19} type="email" id="email" name="email" onChange={(e) => onChangeInput(e)} />
                         </div>
                         {errorEmail && <StyledError>Wprowadz email</StyledError>}
                         <div className="container-form">
                             <label htmlFor="phone">Numer telefonu:</label>
-                            <InputError placeholder="661 366 211" item={errorPhone} type="number" id="phone" name="phone" onChange={(e) => onChangeInput(e)} />
+                            <InputError placeholder="661 366 211" item={errorPhone} type="number" id="phone" maxLength={9}  name="phone" onChange={(e) => onChangeInput(e)} />
                         </div>
                         {errorPhone && <StyledError>Podaj telefon</StyledError>}
-                        {errorDate && <StyledError style={{ margin: '20px 0' }} >Wybierz date</StyledError>}
+                        {errorDate && <StyledError style={{ margin: '20px 0' }}  >Wybierz date</StyledError>}
                         <div style={{ marginTop: '30px' }}>
 
                             <ThemeProvider theme={theme}>
@@ -139,7 +167,7 @@ const Reserved = ({ reserveRoom, oneRoom, sendEmail, match, room, addUser, user,
                             </ThemeProvider>
                         </div>
                         {submitInput && <>
-                            <Code setCodeInfo={setCodeInfo} codeInfo={codeInfo} generateCode={generateCode} code={user.idRoom.length >= 1 
+                            <Code codeInfo={codeInfo} generateCode={generateCode} code={user.idRoom.length >= 1 
                                 ? user.idRoom[0].code : 0} />
                             <Price night={startDate.length} room={room} />
                         </>}

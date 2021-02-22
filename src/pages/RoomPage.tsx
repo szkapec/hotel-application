@@ -7,11 +7,11 @@ import RoomWrapper from './Room/RoomWrapper';
 import '../sass/style/RoomPage/_roomPage.css';
 const RoomPage = ({ oneRoom, room, match, showAllUserFromRoom }) => {
 
+
     useEffect(() => {
         oneRoom(match.params.room_id) //informacje o pokoju
         showAllUserFromRoom(match.params.room_id) //wszystkie rezerwacje dla danego pokoju
     }, [])
-
 
     return (
         <div>

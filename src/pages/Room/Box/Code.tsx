@@ -1,6 +1,12 @@
 import React from 'react'
 
-const Code = ({ codeInfo, generateCode, code, setCodeInfo }) => {
+type CodeType = {
+    codeInfo: boolean,
+    generateCode: Function,
+    code: number,
+}
+
+const Code = ({ codeInfo, generateCode, code }: CodeType) => {
 
 
     return (

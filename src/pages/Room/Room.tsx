@@ -4,8 +4,15 @@ import { oneRoom, reserveRoom } from '../../actions/room.actions';
 import Reserved from './Box/Reserved';
 import DescriptionRoom from './Box/DescriptionRoom';
 import Slide from './Slide/Slide.js';
-const Room = ({ room, match }) => {
+import {RoomType, RoomMatchType} from './TypeRoom';
 
+type RoomTypeWrapper = {
+    room: RoomType,
+    match: RoomMatchType,
+}
+
+const Room = ({ room, match }: RoomTypeWrapper) => {
+    console.log(room)
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])

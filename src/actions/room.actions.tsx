@@ -2,6 +2,9 @@ import axios from 'axios';
 import {ROOM_IS_LOADED, ONE_ROOM, RESERVED_ROOM, EMAIL_SEND, RESERVED_FAIL, ONE_ROOM_FAIL, ROOM_FORM_FAIL } from '../constants/room.constants'
 import { Dispatch } from 'redux';
 
+type RoomType = {
+    type: string;
+}
 
 const API = 'http://192.168.100.115:4000'
 // const API = 'https://backend-post.herokuapp.com'
@@ -9,7 +12,7 @@ const API = 'http://192.168.100.115:4000'
 export const AllRoom = () => async (dispatch: Dispatch) => {
 
     try {
-        const response = await axios.get(`${API}/api/hotel/room/room`)
+        const response = await axios.get<XMLHttpRequest>(`${API}/api/hotel/room/room`)
         dispatch({
             type: ROOM_IS_LOADED,
             payload: response.data
@@ -22,7 +25,6 @@ export const AllRoom = () => async (dispatch: Dispatch) => {
 }
 
 export const oneRoom = (room_id: string) => async (dispatch: Dispatch) => {
-
     try {
         const response = await axios.get(`${API}/api/hotel/room/room/${room_id}`)
         dispatch({

@@ -14,7 +14,6 @@ const DescriptionRooms = () => {
             Każdy pokój w naszym hoteli Lapras ma inny temat przewodni, który pozwoli poczuć klimat dawnych podróży.
             Dodatkowo każdy pokój jest wyposażony w odzielną łazienkę orach kuchnię.</p>
         </section>
-
         </div>
     )
 }

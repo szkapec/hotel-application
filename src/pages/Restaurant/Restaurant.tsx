@@ -5,14 +5,19 @@ import FirstCourse from './Menu/FirstCourse';
 import Desserts from './Menu/Desserts';
 import Starters from './Menu/Starters';
 import { Link } from 'react-router-dom';
+
+
+type Cart = 'first-course' | 'main-course' | 'starters' | "desserts";
+
 const Restaurant = () => {
 
     const [choice, setChoice] = useState("first-course")
-    let handleClick = (e) => {
-        setChoice(e.target.dataset.type)
+    let handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        let cartSelect = ((event.target as HTMLButtonElement).dataset);
+        setChoice(cartSelect.type as Cart)
     }
 
-    let filterDish: any = () => {
+    let filterDish:any = () => {
 
         switch (choice) {
             case 'first-course': return <FirstCourse />
@@ -23,7 +28,6 @@ const Restaurant = () => {
     }
     return (
         <div style={{ marginTop: '40px' }}>
-
             <section className="choince-menu">
                 <button data-type="first-course" onClick={handleClick}> Dania Pierwsze</button>
                 <button data-type="main-course" onClick={handleClick}> Dania główne</button>

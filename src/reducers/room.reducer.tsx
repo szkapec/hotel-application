@@ -8,6 +8,7 @@ const initialState = {
    errors: {},
 };
 
+
 const posts = (state = initialState, action) => {
    const { type, payload } = action;
    switch(type) {

@@ -1,24 +1,31 @@
 import React, {useEffect, useState} from 'react'
+import {UserType} from './Types';
 
-const ArchiveRooms = ({user,today}) => {
+type Users = {
+  user: UserType,
+  today: string,
+}
 
-    let [archive, setArchive] = useState([])
-    let [current, setCurrent] = useState([])
-    let [money, setMoney] = useState([])
-    let [moneyArchive, setMoneyArchive] = useState([])
-    let [moneyFuture, setMoneyFuture] = useState([])
-    let [averageNumberOfDays, setAverangeNumberOfDays] = useState([])
+
+const ArchiveRooms = ({user,today}:Users) => {
+
+    let [archive, setArchive] = useState<Array<object>>([])
+    let [current, setCurrent] = useState<Array<object>>([])
+    let [money, setMoney] = useState<Array<number>>([])
+    let [moneyArchive, setMoneyArchive] = useState<Array<number>>([])
+    let [moneyFuture, setMoneyFuture] = useState<Array<number>>([])
+    let [averageNumberOfDays, setAverangeNumberOfDays] = useState<Array<number>>([])
     
     let clear = () => {
-        setCurrent([])
-        setArchive([])
-        setMoney([])
-        setMoneyArchive([])
-        setMoneyFuture([])
-        setAverangeNumberOfDays([])
+        setCurrent([]);
+        setArchive([]);
+        setMoney([]);
+        setMoneyArchive([]);
+        setMoneyFuture([]);
+        setAverangeNumberOfDays([]);
     }
+
     useEffect(() => {
-        
         clear();
        
         user.allUsers.map(item => {
@@ -52,7 +59,6 @@ const ArchiveRooms = ({user,today}) => {
         }
       }
     
-      console.log(moneyFuture)
     return (
         <>
             <p>Ilość rezerwacji archiwalnych: <b>{archive.length}</b></p>

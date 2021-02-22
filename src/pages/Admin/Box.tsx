@@ -2,8 +2,16 @@ import React from 'react'
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { OneRoomUsers } from '../../actions/user.actions';
+import {RoomType} from './Types';
 
-const Box = ({ room, endOfBooking, OneRoomUsers }) => {
+type PropsType = {
+    room: RoomType
+    endOfBooking: Array<string>,
+    OneRoomUsers: Function
+}
+
+const Box = ({ room, endOfBooking, OneRoomUsers }: PropsType) => {
+
 
     const valueColor = (id: any) => {
         let values = endOfBooking.filter(item => item === id)

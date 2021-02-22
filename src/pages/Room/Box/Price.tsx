@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import Payment from './Payment.js'
+import {RoomType} from '../TypeRoom';
 
-const Price = ({ room, night }) => {
+type PriceType = {
+    room: RoomType,
+    night: number,
+}
+const Price = ({ room, night }: PriceType) => {
+
     const [card, setCard] = useState(true)
     const [cash, setCash] = useState(true)
 
@@ -18,4 +24,4 @@ const Price = ({ room, night }) => {
     )
 }
 
-export default Price
+export default Price;

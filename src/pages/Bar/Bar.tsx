@@ -5,16 +5,19 @@ import Whisky from './Menu/Whisky';
 import '../../sass/style/Bar/Bar.css';
 import { Link } from 'react-router-dom';
 
+type Cart = 'wine' | 'beer' | 'whisky';
+
+
 const Bar = () => {
 
-    const [choice, setChoice] = useState("wine")
+    const [choice, setChoice] = useState<Cart>("wine")
 
-    let handleClick = (e) => {
-        setChoice(e.target.dataset.type)
+    let handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        let cartSelect = ((event.target as HTMLButtonElement).dataset);
+        setChoice(cartSelect.type as Cart)
     }
 
     let filterDish:any = () => {
-
         switch (choice) {
             case 'wine': return <Wine />;
             case 'beer': return <Beer />;

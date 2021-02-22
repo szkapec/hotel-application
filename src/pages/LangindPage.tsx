@@ -43,7 +43,6 @@ const LangindPage = ({ room }) => {
                     </div>
                 })}
             </section>
-            
         </>
     )
 }

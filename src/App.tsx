@@ -18,6 +18,7 @@ import Footer from './pages/Footer/Footer';
 import Restaurant from './pages/Restaurant/Restaurant'
 import './sass/style.scss';
 
+
 const App = () => {
 
   useEffect(() => {

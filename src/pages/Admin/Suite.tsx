@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import ArchiveRooms from './ArchiveRooms';
+import {UserType} from './Types';
 
-const Suite = ({ user, today}) => {
+type Users = {
+    user: UserType
+    today: string,
+}
 
+const Suite = ({ user, today}: Users) => {
 
     let [money, setMoney] = useState([])
-
     useEffect(() => {
         setMoney([])
-        user.allUsers.length !== 0 && user.allUsers.map(item => {
+            user.allUsers.map(item => {
             let value = item.startDate.length * item.capacity
             setMoney(prevState => [...prevState, value])
         })
@@ -20,15 +24,12 @@ const Suite = ({ user, today}) => {
              <h3>Wskaźnik sprzedaży</h3>
              <div>
             <ArchiveRooms user={user} today={today}/>
-           
-           
                 <p>Użytkownicy którzy u nas zarezerowali wizyte: <b>{user.allUsers.length}</b></p>
                 <p>rezerwacje</p>
                 <p>średnia wartość</p>
                 <p>srednio na ile uzytkownik przyjeżdza</p>
                 <p>Ile kupuje, w ile osob przyjezda</p>
             </div>
-
         </StyledIndicator>
     )
 }

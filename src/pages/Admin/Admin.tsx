@@ -5,17 +5,18 @@ import '../../sass/style/Admin/Admin.css';
 import Box from './Box';
 import AllUsers from './AllUsers';
 import Suite from './Suite';
-import ArchiveRooms from './ArchiveRooms';
+import {UserType, RoomType} from './Types';
 
-type CartProps = {
-    room: any,
-    user: any,
-    allUser: any,
+type Users = {
+    user: UserType,
+    today: string,
+    allUser: Function,
+    room: RoomType
 }
 
-const Admin = ({ room, user, allUser }: CartProps) => {
+const Admin = ({ room, user, allUser }: Users) => {
 
-    let [endOfBooking, setEndOfBooking] = useState([]);
+    let [endOfBooking, setEndOfBooking] = useState<Array<string>>([]);
     let [today, setToDay] = useState<any>();
 
     useEffect(() => {
@@ -23,7 +24,8 @@ const Admin = ({ room, user, allUser }: CartProps) => {
         allUser();
         let todays = formatDate(new Date())
         setToDay(todays)
-        user.allUsers.length !== 0 && user.allUsers.map(item => item.startDate.map(day => {
+        //user.allUsers.length !== 0 && 
+        user.allUsers?.map(item => item.startDate.map(day => {
             day === today && setEndOfBooking(prevState => [...prevState, item.idRoom])
         }))
     }, [user.isloadingAllUsers])
@@ -43,13 +45,16 @@ const Admin = ({ room, user, allUser }: CartProps) => {
     return (
         <section className="admin-container">
             <Box room={room} endOfBooking={endOfBooking} />
-            {/* <ArchiveRooms user={user} today={today}/> */}
             <AllUsers user={user} today={today} />
             <Suite user={user} today={today}/>
         </section>
     )
 }
-const mapStateToProps = (state) => ({
+type StateTypeRedux = {
+    room: any,
+    user: UserType,
+}
+const mapStateToProps = (state: StateTypeRedux) => ({
     room: state.room.allRoom,
     user: state.user,
 });

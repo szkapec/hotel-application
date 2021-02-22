@@ -1,12 +1,16 @@
 import React from 'react'
+import {RoomType} from '../TypeRoom';
 
-const DescriptionRoom = ({room}) => {
+type DescriptionType = {
+    room: RoomType
+}
+
+const DescriptionRoom = ({room}:DescriptionType) => {
 
  
-    let {additionally, capacity, extras, images, info, price, roomNumber} = room;
-
+    let {additionally, capacity, extras, info, price, roomNumber} = room;
+    console.log(typeof info)
     const roomNumberInfo = () => {
-        console.log(roomNumber)
         if (roomNumber > 0 && roomNumber <= 5) return "parterze"
         else if (roomNumber > 5 && roomNumber <= 10) return "1 piętrze"
         else if (roomNumber > 10 && roomNumber <= 15) return "2 piętrze"
